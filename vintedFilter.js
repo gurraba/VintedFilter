@@ -174,11 +174,11 @@
     }
 
     // Choose what to hide
-    hidePolishListings();
+    hideForeignCurrency();
 
     // Run again when scrolling / new items load
     const observer = new MutationObserver(() => {
-        hideForeignListings()    // <<=== you'll have to add it here too!
+        hideForeignCurrency(); //<<=== you'll have to add it here too!
     });
 
     observer.observe(document.body, {
@@ -187,6 +187,3 @@
     });
 
 })();
-
-
-
