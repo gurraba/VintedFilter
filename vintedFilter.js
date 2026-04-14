@@ -157,12 +157,28 @@
 
     }
 
-    // Run initially
+    function hideForeignCurrency() {
+        const items = document.querySelectorAll('[data-testid="grid-item"]');
+
+        items.forEach(item => {
+            const div = item.querySelector(".title-content")
+            if (!div) return;
+
+            const price = parseFloat(div.textContent.replace(',', '.'));
+            if (!price) return;
+
+            if (Number.isInteger(price)) return;
+
+            item.style.display = "none";
+        });
+    }
+
+    // Choose what to hide
     hidePolishListings();
 
     // Run again when scrolling / new items load
     const observer = new MutationObserver(() => {
-        hidePolishListings();
+        hideForeignListings()    // <<=== you'll have to add it here too!
     });
 
     observer.observe(document.body, {
