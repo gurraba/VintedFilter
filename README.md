@@ -4,6 +4,8 @@ Have you ever used Vinted? Then you've most likely noticed the inability to filt
 This script does not allow you to choose specific countries to show, but rather filters out every country 
 that uses a **different currency** than yours, and listings that **contain certain languages**.
 
+For example, if you live in sweden, this filter will hide listings from poland, Finland, and Denmark.
+
 If a user that lives in a country with a different currency than your own, Vinted will translate
 their price into your local currency _exactly_, which means that it will contain decimals. By filtering out these listing
 we can hide listings that are made with a different currency.
